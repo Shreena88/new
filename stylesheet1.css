@@ -1,0 +1,1117 @@
+/* Ensure body and HTML take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9), rgba(15, 52, 96, 0.9)), 
+                url('Dec.png'); /* Gradient Overlay with Background Image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect */
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Ensure container is centered */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    z-index: 2;
+}
+
+/* Navigation Bar Styling - Positioned Top Right */
+.navbar {
+    position: fixed;
+    font-family: 'Poppins', sans-serif;
+    top: 40px;
+    right: 90px;
+    display: flex;
+    justify-content: flex-end; /* Align navbar contents to the right */
+    width: auto;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* Ensures list items align to the right */
+    gap: 45px;
+}
+
+.navbar li {
+    position: relative;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+/* Hover Effect for Navigation Links */
+.navbar li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #ff4081; /* Dark pink hover effect */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.navbar a:hover {
+    color: #ff4081;
+}
+
+
+/* LogIn Button Special Styling */
+.login-btn {
+    background: #ff4081; /* Dark Pink */
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect for LogIn Button */
+.login-btn:hover {
+    background: white;
+    color: #ff4081;
+    box-shadow: 0px 0px 10px rgba(255, 64, 129, 0.5);
+}
+
+
+
+
+#logo {
+    position: fixed; /* Stays in the same position even when scrolling */
+    top: 20px; /* Moves it down slightly */
+    left: 20px; /* Positions it at the top-left */
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 10px; /* Adds spacing to avoid touching screen edges */
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+#logo .icon {
+    color: #ff4081; /* Dark Pink on hover */
+}
+.navbar, #logo {
+    position: fixed; /* Keeps navbar & logo fixed at the top */
+    top: 40px;
+    width: 100%;
+    transition: transform 0.4s ease-in-out; /* Smooth slide effect */
+}
+
+.hidden {
+    transform: translateY(-100px); /* Moves navbar & logo out of view */
+}
+@media (max-width: 500px) {
+    /* Ensure Navbar Stays in One Line */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 10px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;  /* Ensures Home & Log In stay in one line */
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Space between items */
+        padding: 0;
+        list-style: none;
+        margin-right: -5%;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        padding: 5px 10px;
+        white-space: nowrap; /* Prevents text from wrapping */
+
+    }
+
+    /* Ensure Login Button is in Line */
+    .login-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    /* Adjust Logo */
+    #logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+    }
+}
+/*Home section*/
+
+.main-container {
+    height: 100vh; /* Full height */
+    padding: 10px; /* Prevents content from sticking to edges */
+
+}
+
+.upload-container {
+    align-items: center; /* Vertically centers the image */
+    height: 80vh; /* Full height */
+}
+
+.image {
+    position: absolute;
+    top: 18%; /* Adjusts vertical placement */
+    left: 14%;
+    max-width: 29%; /* Ensures image stays within container */
+    border-radius: 10px; /* Adds rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.image:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.6); /* Enhanced white glow on hover */
+    border-color: white; /* Change border color to white on hover */
+    filter: drop-shadow(0px 0px 10px white); /* Adds a shine effect */
+}
+
+
+.content {
+    position: absolute;
+    right: 15vw; /* Keeps it aligned to the right */
+    top: 30vh; /* Adjusts vertical placement */
+    max-width: 500px; /* Prevents it from stretching too much */
+    text-align: center; /* Aligns text inside */
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+}
+
+/* Heading Styling */
+.content h1 {
+    font-size: 32px; /* Larger for emphasis */
+    font-weight: bold;
+    color: #ff4081; /* Dark pink for contrast */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    bottom: 34px;
+}
+
+/* Paragraph Styling */
+.content p {
+    font-size: 25px; /* Slightly bigger for better readability */
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.scroll-down {
+    background: #ff4081;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Oval shape */
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.4);
+}
+
+.scroll-down:hover {
+    background: white;
+    color: #ff4081;
+    box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.6);
+}
+
+ 
+
+
+/* Mobile (500px and below) */
+@media (max-width: 500px) {
+    .main-container {
+        height: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .upload-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .image {
+        max-width: 70%; /* Medium-sized image on phones */
+        position: relative;
+        left: 0;
+        top: 5%;
+        transform: none;
+        margin-left: -5%;
+    }
+
+    .content {
+        max-width: 50%;
+        text-align: center;
+        font-size: 18px;
+        margin-right: -80%;
+        margin-top: -60px;
+        gap: 4px;
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .scroll-down {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+}
+
+/*Upload section*/
+.upload-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-top: 0px;
+    width: 80%;
+    max-width: 600px;
+}
+
+
+.upload-section h2 {
+    font-size: 45px;
+    color: #ff4081;
+    margin-top: 50px;
+}
+
+.upload-section p{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 26px;
+    margin-top: 5px;
+}
+
+.upload-section input {
+    margin: 15px 0;
+    padding: 56px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+.upload-section button {
+    background: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-section button:hover {
+    background: white;
+    color: #ff4081;
+}
+
+
+/* Upload Form Styling */
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px ;
+    border: 2px dashed #4CAF50;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 560px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom File Input */
+#fileInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    width: 90%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+
+}
+
+/* File Input Hover & Focus */
+#fileInput:hover, #fileInput:focus {
+    border-color: #ff79a1;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#filePaths {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    max-height: 150px; /* Ensures last file is visible */
+}
+
+/* File Paths List */
+#filePathList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    max-height: 120px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual File Path Items */
+#filePathList li {
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    word-break: break-word;
+    transition: 0.3s ease-in-out;
+}
+
+/* Ensures the last file remains visible */
+#filePathList li:last-child {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+/* Scrollbar Styling */
+#filePathList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#filePathList::-webkit-scrollbar-thumb {
+    background: #ff4081;
+    border-radius: 10px;
+}
+
+
+/* Upload Button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Upload Status Message */
+#uploadStatus {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* File Paths Section */
+#filePaths {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    max-height: 200px; /* Allows scrolling for long lists */
+}
+
+/* File Paths List */
+#filePathList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* Individual File Path Items */
+#filePathList li {
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    word-break: break-word;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+/* Ensure last file remains visible */
+#filePathList li:last-child {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+/* Scrollbar Styling */
+#filePathList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#filePathList::-webkit-scrollbar-thumb {
+    background: #ff4081;
+    border-radius: 10px;
+}
+
+/* Mobile (500px and below) */
+@media (max-width: 500px) {
+    .upload-section {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        margin: auto;
+        margin-left: 45%;
+    }
+
+    .upload-section h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .upload-section p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #uploadForm {
+        width: 100%;
+        max-width: 360px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    #filePaths {
+        max-width: 360px;
+        padding: 10px;
+    }
+
+    #filePathList li {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    /* Adjust File Input */
+    #fileInput {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+}
+
+/* Extract Section */
+
+.extract-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-top: 10%;
+    width: 115%;
+}
+
+/* Extract Section Heading */
+.extract-section h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-top: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Extract Section Paragraph */
+.extract-section p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Extract Form */
+#extractForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px dashed #ff4081;
+    border-radius: 10px;
+    width: 92%;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Extract Button */
+.extract-section button {
+    background: #ff4081;
+    color: white;
+    padding: 12px 25px;
+    margin-top: 34px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Hover */
+.extract-section button:hover {
+    background: white;
+    color: #ff4081;
+    border: 2px solid #ff4081;
+}
+
+/* Extracted Results */
+#extractResults {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    display: none; /* Initially hidden */
+}
+
+/* Extracted Details Text */
+#extractedData {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+  /* Buttons */
+  button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #ff4081;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Percentage Text */
+.progress-text {
+    text-align: center;
+    font-size: 18px;
+    color: #ff4081;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Download Button */
+button {
+    background: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+    margin-bottom: 34px;
+    box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.4); /* Soft box shadow */
+    font-weight: bold;
+}
+
+/* Hover Effect - Pressed Look */
+button:hover {
+    background: white;
+    color: #ff4081;
+    box-shadow: 0px 2px 8px rgba(255, 64, 129, 0.6); /* Smaller shadow for pressed effect */
+    transform: translateY(2px); /* Slightly moves down */
+}
+
+/* Active Effect - Deep Pressed Look */
+button:active {
+    box-shadow: 0px 1px 5px rgba(255, 64, 129, 0.8);
+    transform: translateY(4px);
+}
+
+.flip-card {
+    perspective: 1200px; /* Stronger 3D effect */
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.flip-card-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out; /* Smooth transition */
+    transform: rotateY(0deg); /* Initial state */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(0deg);
+}
+
+
+
+/* Common styling for both front and back */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 300%;
+    height: 90%;
+    border-radius: 15px; /* Consistent shape */
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+/* Specific styles for front */
+.flip-card-front {
+    z-index: 2;
+    
+}
+
+/* Specific styles for back */
+.flip-card-back {
+    position: absolute;
+    top: 0;
+    left: -32%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+
+
+}
+
+
+
+/* Hide Claim Info Card Initially */
+#claim-info-card {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+}
+
+/* Claim Info Card */
+.claim-card {
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Claim Card Heading */
+.claim-card h2 {
+    font-size: 32px;
+    color: #ff4081;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Claim Info Box */
+.claim-info-box {
+    background: rgba(0, 0, 0, 0.4); /* Dark transparent background */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+
+/* Claim Info Text */
+.claim-card p {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+    
+}
+
+/* Highlight Important Info */
+.claim-card span {
+    font-weight: bold;
+    color: #ff79a1; /* Yellow highlight */
+}
+
+/* Extracted Data Box */
+#extractedData {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Upload Another Document Button */
+.claim-card button {
+    background: #ff4081;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.4);
+}
+
+/* Button Hover Effect */
+.claim-card button:hover {
+    background: white;
+    color: #ff4081;
+    border: 2px solid #ff4081;
+    box-shadow: 0px 2px 8px rgba(255, 64, 129, 0.6);
+    transform: translateY(2px);
+}
+
+/* Button Active (Pressed) Effect */
+.claim-card button:active {
+    box-shadow: 0px 1px 5px rgba(255, 64, 129, 0.8);
+    transform: translateY(4px);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Extracted Info Box - Matches Upload Section */
+.extracted-info-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Extracted Info Heading */
+.extracted-info-box h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 15px;
+}
+
+/* Extracted Info Text */
+.extracted-info-box p {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Display Info & Claim Info Buttons */
+#displayInfoBtn, #claimInfoBtn {
+    background: #ff4081;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#displayInfoBtn:hover, #claimInfoBtn:hover {
+    background: #ff79a1;
+    color: white;
+}
+
+/* Extracted Data Box */
+#extractedData {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+
+/*log in*/
+
+.login-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 350px;  /* Make width equal */
+    height: 350px; /* Make height equal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content */
+    align-items: center; /* Center horizontally */
+    z-index: 1000;
+}
+
+/* Adjust input fields to fit inside */
+input {
+    width: 85%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+
+}
+
+
+/* Ensure title is centered */
+h2 {
+    color: #ff4081;
+    margin-bottom: 15px;
+}
+
+input::placeholder {
+    color: white; /* Dark Pink */
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+
+/* Hide Login Box Initially */
+.login-overlay, .login-container {
+    display: none; /* Hidden by default */
+}
+
+/* Overlay for Glass Effect */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+/* Login Box */
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 400px;
+    z-index: 1000;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hide Navbar When Login Box is Open */
+body.login-active .navbar {
+    display: none;
+}
+/* Hide Login Box Initially */
+.login-overlay, .login-container {
+    display: none; /* Hidden by default */
+}
+
+/* Overlay for Glass Effect */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+/* Login Box */
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 400px;
+    z-index: 1000;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hide Navbar When Login Box is Open */
+body.login-active .navbar {
+    display: none;
+}
